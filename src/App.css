@@ -1,38 +1,129 @@
+:root {
+  --gradient: linear-gradient(185deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 80%);      
+  --darkGray: hsl(236, 9%, 61%);
+  --veryDarkGray: hsl(237, 14%, 26%);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+
+}
+
+/* - Bright Blue: hsl(220, 98%, 61%) 
+
+Check Background:  ### Neutral ### Light Theme - Very Light Gray: hsl(0, 0%, 98%) - Very Light Grayish Blue: hsl(236, 33%, 92%) - Light Grayish Blue: hsl(233, 11%, 84%) - Dark Grayish Blue:  - Very Dark Grayish Blue: hsl(235, 19%, 35%)
+ */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: black; 
+  background-image: url('../public/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  color: white;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+    background-color: var(--veryDarkGray);
+    width: 500px;
+    height: 90vh;
+}
+
+#search-bar {
+  padding: 30px;
+  width: 500px;
+  background-color: var(--veryDarkGray);
+  border: none;
   color: white;
+  font-size: 20px;
+  margin: 20px 0px;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.listado-tareas {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  place-items: center;
+  padding: 20px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  width: 500px;
+
+}
+
+.list ul {
+list-style-type: none;
+padding: 0;
+  margin: 0;
+}
+
+.done {
+  opacity: 1;
+
+}
+
+.notDone {
+    opacity: 0;
+}
+
+#iconsCheck {
+  width: 50px;
+  height: 50px;
+}
+
+.button-circle {
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+}
+
+.button-circle:hover{
+    border:1px solid;
+    border-image: var(--gradient);
+    border-image-repeat: round;
+    border-image-slice: 1;
+
+}
+
+.button-completed {
+  background: var(--gradient);
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 50%;
+          
+}
+
+.list-text {
+  font-size: 16px;
+}
+
+.underline-done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.bottom-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottom-list button {
+  background-color: transparent;
+  color: white;
+  pad: 0;
+  border: none;
 }
