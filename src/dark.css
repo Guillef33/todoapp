@@ -3,7 +3,6 @@
     color: var(--VeryLightGray);
     border-radius: 10px;
     height: 400px;
-    overflow-y: scroll;
 }
 
 #dark .top {
@@ -55,7 +54,16 @@
 
 #dark .bottom-list button {
     background-color: transparent;
-    color: var(--veryDarkGray);
+    color: var(--VeryLightGray);
+    padding: 0;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+}
+
+#dark .second-row-mobile button {
+    background-color: transparent;
+    color: var(--VeryLightGray);
     padding: 0;
     border: none;
     font-family: 'Josefin Sans', sans-serif;

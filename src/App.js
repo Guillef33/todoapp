@@ -1,10 +1,8 @@
 import { useState, createContext } from "react";
 import "./App.css";
-import ReactSwitch from "react-switch";
-import ToDoApp from "./components/ToDoApp";
-import DarkMode from "./components/darkMode";
+import ToDoContainer from "./components/ToDoContainer";
 
-import Test from "./components/testResponsive";
+import ToDoSearch from "./components/ToDoSearch";
 
 export const ThemeContext = createContext(null);
 
@@ -14,28 +12,30 @@ function App() {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
   };
 
-  // A mejorar
-  // Boton Mostrar todos
-  // El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
-  // Que la palabra desaparezca despues del submit
-  // Redondez del borde degradado en hover
+  const [toDos, setToDos] = useState([]);
+  const addToDo = () => {
+    setToDos((students) => [
+      ...toDos,
+      <ToDoContainer theme={theme} toggleTheme={toggleTheme} />,
+    ]);
+    console.log("dddd", toDos);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className="App" id={theme}>
-        <div className="header">
-          <h2>TODO</h2>
-          <div className="switch">
-            {/* <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label> */}
-            {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
-            <DarkMode theme={theme} toggleTheme={toggleTheme} />
-          </div>
-        </div>
-        <ToDoApp />
-        {/* <Test /> */}
-      </div>
+      {/* <ToDoContainer theme={theme} toggleTheme={toggleTheme} /> */}
+      <button onClick={addToDo}>Crear nuevo ToDo</button>
+      <div className="container">{toDos.map((uno) => uno)}</div>
     </ThemeContext.Provider>
   );
 }
 
 export default App;
+
+
+
+  // A mejorar
+  // Boton Mostrar todos
+  // El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
+  // Que la palabra desaparezca despues del submit
+  // Redondez del borde degradado en hover
