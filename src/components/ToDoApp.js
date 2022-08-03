@@ -17,7 +17,6 @@ function ToDoApp() {
     // { id: 0, query: query, isDone: false, exist: true },
   ]);
 
-  /////////// Funciona mal /////////////////////////
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
     localStorage.getItem("list");
@@ -32,7 +31,7 @@ function ToDoApp() {
         setQuery={setQuery}
       />
       <div className="wrapper">
-        <ToDoList list={list} setList={setList} />
+        <ToDoList list={list} setList={setList} query={query} />
         <BottomList list={list} setList={setList} />
       </div>
     </>

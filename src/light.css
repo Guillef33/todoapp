@@ -3,7 +3,6 @@
     color: var(--veryDarkGray);
     border-radius: 10px;
         height: 400px;
-            overflow-y: scroll;
 }
 
 #light .top {
@@ -23,6 +22,11 @@
 #light form {
     display: flex;
     align-items: center;
+}
+
+#light .header h2 {
+    color: var(--VeryLightGray);
+    letter-spacing: 1em;
 }
 
 #light form .button-circle {
@@ -48,6 +52,15 @@
 }
 
 #light .bottom-list button {
+    background-color: transparent;
+    color: var(--veryDarkGray);
+    padding: 0;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+}
+
+#light .second-row-mobile button {
     background-color: transparent;
     color: var(--veryDarkGray);
     padding: 0;

@@ -29,6 +29,11 @@
     margin-left: 30px;
 }
 
+#dark .header h2 {
+    color: var(--veryDarkGray);
+    letter-spacing: 1em;
+}
+
 #dark .listado-tareas {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;

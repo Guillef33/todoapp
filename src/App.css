@@ -125,7 +125,7 @@ padding: 0;
 .bottom-list {
   display: grid;
   justify-content: space-evenly;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   padding: 20px 0px;
 }
 
@@ -133,6 +133,11 @@ padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.first-row-mobile, .second-row-mobile {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 760px) {
