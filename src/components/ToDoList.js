@@ -1,15 +1,15 @@
-import React from 'react'
-import ToDoSearch from './ToDoSearch';
+import React from "react";
 
 import iconCheck from "../assets/icon-check.svg";
 import iconCross from "../assets/icon-cross.svg";
+import '../dark.css';
+import "../light.css";
 
-function ToDoList({list, setList}) {
-  /////////// Funciona mal, creo que tiene que ver con el modo que incrementamos el id del item respecto al index /////////////////////////
+function ToDoList({ list, setList }) {
+  /////////// Crear una funcion que cree ids unicos, con letras y numeros /////////////////////////
   const handleRemove = (index) => {
     console.log(index);
-    const newList = list.filter((item) => item.id !== index);
-    console.log(newList);
+    const newList = list.filter((item) => item.id !== index.id);
     setList(newList);
   };
 
@@ -24,7 +24,7 @@ function ToDoList({list, setList}) {
       <ul>
         {list.map((item, index) => {
           return (
-            <div className="listado-tareas">
+            <div className="listado-tareas" key={item.id}>
               <div
                 onClick={() => markItem(index)}
                 className={item.isDone ? "button-completed" : "button-circle"}
@@ -32,7 +32,6 @@ function ToDoList({list, setList}) {
                 <img
                   src={iconCheck}
                   alt="icon-cross"
-                  // onClick={() => handleRemove(index)}
                   className={item.isDone ? "done" : "notDone"}
                 />
               </div>
@@ -45,7 +44,7 @@ function ToDoList({list, setList}) {
               <img
                 src={iconCross}
                 alt="icon-cross"
-                onClick={() => handleRemove(index)}
+                onClick={() => handleRemove(item)}
                 className="button-cross"
               />
             </div>
@@ -56,4 +55,4 @@ function ToDoList({list, setList}) {
   );
 }
 
-export default ToDoList
+export default ToDoList;

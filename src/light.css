@@ -1,0 +1,76 @@
+#light .wrapper {
+    background-color: var(--VeryLightGray);
+    color: var(--veryDarkGray);
+    border-radius: 10px;
+        height: 400px;
+            overflow-y: scroll;
+}
+
+#light .top {
+    background-color: var(--VeryLightGray);
+    color: var(--veryDarkGray);
+    padding: 10px 0px;
+    width: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#light .list {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#light form {
+    display: flex;
+    align-items: center;
+}
+
+#light form .button-circle {
+    margin-left: 30px;
+}
+
+#light .listado-tareas {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    place-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid var(--veryDarkGray);
+}
+
+#light #search-bar {
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    font-size: 20px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    background-color: var(--VeryLightGray);
+    margin-left: 10px;
+}
+
+#light .bottom-list button {
+    background-color: transparent;
+    color: var(--veryDarkGray);
+    padding: 0;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 760px) {
+        #light .list {
+         width: 100%;
+    }
+    #light .wrapper {
+         width: 100%;
+    }
+    
+    #light .top {
+    width: 300px;
+    }
+
+    #light .header {
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+}

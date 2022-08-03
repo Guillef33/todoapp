@@ -26,7 +26,9 @@ function BottomList({ list, setList }) {
 
   return (
     <div className="bottom-list">
-      <p>{list.filter((item) => item.isDone === false).length} items left</p>
+      <button>
+        {list.filter((item) => item.isDone === false).length} items left
+      </button>
       <button onClick={showAll}>All</button>
       <button onClick={showCompleted}>Completed</button>
       <button onClick={deleteCompleted}>Clear Completed</button>

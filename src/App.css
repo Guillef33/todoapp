@@ -1,24 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
 :root {
-  --gradient: linear-gradient(185deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 80%);      
-  --darkGray: hsl(236, 9%, 61%);
-  --veryDarkGray: hsl(237, 14%, 26%);
+  /* Global */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
+  --gradient: linear-gradient(185deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 80%);   
+  /* Dark Theme */
+  --darkGray: hsl(236, 9%, 61%);
+  --veryDarkGray: hsl(237, 14%, 26%);
+  /* Light Theme */
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --BrightBlue: hsl(220, 98%, 61%)
 }
 
 body {
-
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-/* - Bright Blue: hsl(220, 98%, 61%) 
-
-Check Background:  ### Neutral ### Light Theme - Very Light Gray: hsl(0, 0%, 98%) - Very Light Grayish Blue: hsl(236, 33%, 92%) - Light Grayish Blue: hsl(233, 11%, 84%) - Dark Grayish Blue:  - Very Dark Grayish Blue: hsl(235, 19%, 35%)
- */
-
 .App {
-  background-color: black; 
   background-image: url('../public/bg-desktop-dark.jpg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -26,35 +26,41 @@ Check Background:  ### Neutral ### Light Theme - Very Light Gray: hsl(0, 0%, 98%
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+#light {
+  background-color: white;
+}
+
+#dark {
+  background-color: var(--veryDarkGray);
+}
+
+#dark .wrapper {
+  background-color: blue;
+  color: white;
 }
 
 .wrapper {
   display: flex;
-  color: white;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-    background-color: var(--veryDarkGray);
-    width: 500px;
-    height: 90vh;
-}
-
-#search-bar {
-  padding: 30px;
   width: 500px;
-  background-color: var(--veryDarkGray);
-  border: none;
-  color: white;
-  font-size: 20px;
-  margin: 20px 0px;
-  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.listado-tareas {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  place-items: center;
-  padding: 20px 0px;
+
+.error-form {
+  padding: 0px 80px;
+  margin: 0px;
 }
 
 .list {
@@ -117,13 +123,26 @@ padding: 0;
 }
 
 .bottom-list {
-  display: flex;
+  display: grid;
   justify-content: space-evenly;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px 0px;
 }
 
-.bottom-list button {
-  background-color: transparent;
-  color: white;
-  pad: 0;
-  border: none;
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+
+  .error-form {
+      padding: 0px 20px;
+    }
+
+  .bottom-list {
+    grid-template-columns: 1fr;
+  }
+  
 }

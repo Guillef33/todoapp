@@ -7,11 +7,14 @@ import ToDoSearch from "./ToDoSearch";
 import ToDoList from "./ToDoList";
 import BottomList from "./BottomList";
 
+import "../dark.css";
+import "../light.css";
+
 function ToDoApp() {
   const [query, setQuery] = useState();
 
   const [list, setList] = useState([
-    { id: 0, query: query, isDone: false, exist: true },
+    // { id: 0, query: query, isDone: false, exist: true },
   ]);
 
   /////////// Funciona mal /////////////////////////
@@ -21,19 +24,18 @@ function ToDoApp() {
   }, [list]);
 
   return (
-    <div className="App">
+    <>
+      <ToDoSearch
+        list={list}
+        setList={setList}
+        query={query}
+        setQuery={setQuery}
+      />
       <div className="wrapper">
-        <h2>TODO</h2>
-        <ToDoSearch
-          list={list}
-          setList={setList}
-          query={query}
-          setQuery={setQuery}
-        />
         <ToDoList list={list} setList={setList} />
         <BottomList list={list} setList={setList} />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import { useState, createContext } from 'react';
 import './App.css';
-
-import ToDoSearch from './components/ToDoSearch';
-import ToDoList from './components/ToDoList';
+import ReactSwitch from 'react-switch'
 import ToDoApp from './components/ToDoApp';
+import DarkMode from './components/darkMode';
 
-import {createStore} from 'redux';
+export const ThemeContext = createContext(null)
 
 function App() {
 
-  // Store
-  // let store = createStore(reducer);
+  const [theme, setTheme] = useState("light")
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
 
-  // Action Increment
-
+  // A mejorar
+  // Boton Mostrar todos
+  // El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
+  // Que la palabra desaparezca despues del submit
+  // Redondez del borde degradado en hover
 
 
   return (
-    
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <div className="header">
+          <h2>TODO</h2>
+          <div className="switch">
+            {/* <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label> */}
+            {/* <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} /> */}
+            <DarkMode theme={theme} toggleTheme={toggleTheme} />
+          </div>
+        </div>
         <ToDoApp />
-
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
