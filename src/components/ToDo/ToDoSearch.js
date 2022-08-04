@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-import iconCheck from "../assets/icon-check.svg";
-import iconCross from "../assets/icon-cross.svg";
+import iconCheck from "../../assets/icon-check.svg";
+import iconCross from "../../assets/icon-cross.svg";
 
-import "../dark.css";
-import "../light.css";
+import "../../dark.css";
+import "../../light.css";
 
-import "../App.css";
+import "../../App.css";
 
 function ToDoSearch({ list, setList, query, setQuery }) {
   const [error, setError] = useState("");
+
   const addTodo = (text) => {
     text.preventDefault();
     if (query === "" || query === undefined || query === null) {

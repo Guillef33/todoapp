@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import iconCheck from "../assets/icon-check.svg";
-import iconCross from "../assets/icon-cross.svg";
-import "../dark.css";
-import "../light.css";
+import iconCheck from "../../assets/icon-check.svg";
+import iconCross from "../../assets/icon-cross.svg";
+import "../../dark.css";
+import "../../light.css";
 
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 

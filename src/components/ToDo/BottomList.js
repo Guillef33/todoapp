@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../App.js";
+import "../../App.js";
 
 function BottomList({ list, setList }) {
   const [mobile, setMobile] = useState(false);

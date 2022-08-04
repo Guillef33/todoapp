@@ -1,14 +1,14 @@
 // import { List } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 
-import iconMoon from "../assets/icon-moon.svg";
-import iconSun from "../assets/icon-sun.svg";
+import iconMoon from "../../assets/icon-moon.svg";
+import iconSun from "../../assets/icon-sun.svg";
 import ToDoSearch from "./ToDoSearch";
 import ToDoList from "./ToDoList";
 import BottomList from "./BottomList";
 
-import "../dark.css";
-import "../light.css";
+import "../../dark.css";
+import "../../light.css";
 
 function ToDoApp() {
   const [query, setQuery] = useState();

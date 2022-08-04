@@ -1,8 +1,8 @@
 import { useState, createContext } from "react";
 import "./App.css";
-import ToDoContainer from "./components/ToDoContainer";
-
-import ToDoSearch from "./components/ToDoSearch";
+import ToDoContainer from "./components/ToDo/ToDoContainer";
+import Nav from "./components/Trello/Nav";
+import Title from "./components/Trello/Title";
 
 export const ThemeContext = createContext(null);
 
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {/* <ToDoContainer theme={theme} toggleTheme={toggleTheme} /> */}
+      <Nav />
+      <Title />
       <button onClick={addToDo}>Crear nuevo ToDo</button>
       <div className="container">{toDos.map((uno) => uno)}</div>
     </ThemeContext.Provider>
@@ -32,10 +33,8 @@ function App() {
 
 export default App;
 
-
-
-  // A mejorar
-  // Boton Mostrar todos
-  // El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
-  // Que la palabra desaparezca despues del submit
-  // Redondez del borde degradado en hover
+// A mejorar
+// Boton Mostrar todos
+// El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
+// Que la palabra desaparezca despues del submit
+// Redondez del borde degradado en hover
