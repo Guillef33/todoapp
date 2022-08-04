@@ -24,7 +24,6 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <Nav />
-      <Title />
       <button onClick={addToDo}>Crear nuevo ToDo</button>
       <div className="container">{toDos.map((uno) => uno)}</div>
     </ThemeContext.Provider>

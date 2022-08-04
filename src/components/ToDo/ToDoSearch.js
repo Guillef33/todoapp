@@ -33,7 +33,7 @@ function ToDoSearch({ list, setList, query, setQuery }) {
           type="text"
           id="search-bar"
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Enter a new task..."
+          placeholder="Escribe una tarea..."
         />
         <p className="error-form">{error}</p>
       </form>

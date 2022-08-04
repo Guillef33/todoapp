@@ -11,14 +11,30 @@
 
 .title-wrapper {
     display: flex;
-    justify-content: space-around;
-    width: 200px;
     align-items: center;
+    letter-spacing: 0px;
+    /* justify-content: space-around;
+    width: 200px;
+     */ 
 }
 
 .title-editor {
     display: flex;
-    justify-content: space-around;
     width: 400px;
     align-items: center;
 }
+
+.title-wrapper img {
+    width: 30px;
+    height: 30px;
+}
+
+#edit-bar {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+

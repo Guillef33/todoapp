@@ -19,9 +19,7 @@ body {
 }
 
 .App {
-  background-image: url('../public/bg-desktop-dark.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
+
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -30,9 +28,13 @@ body {
 }
 
 .header {
+    background-image: url('../public/bg-desktop-dark.jpg');
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 500px;
+    background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
 }
 
 #light {
