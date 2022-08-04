@@ -22,16 +22,32 @@ function ToDoApp() {
     localStorage.getItem("list");
   }, [list]);
 
-  return (
-    <>
+  const [inputTarea, setInputTarea] = useState([]);
+  const showSearch = () => {
+    setInputTarea((students) => [
+      ...inputTarea,
+      // <ToDoContainer theme={theme} toggleTheme={toggleTheme} />,
       <ToDoSearch
         list={list}
         setList={setList}
         query={query}
         setQuery={setQuery}
-      />
+      />,
+    ]);
+  };
+
+  return (
+    <>
       <div className="wrapper">
-        <ToDoList list={list} setList={setList} query={query} />
+        <ToDoList
+          list={list}
+          setList={setList}
+          query={query}
+          setQuery={setQuery}
+        />
+        <button onClick={showSearch}>+ nueva tarea</button>
+        <div className="container">{inputTarea.map((uno) => uno)}</div>
+
         <BottomList list={list} setList={setList} />
       </div>
     </>

@@ -52,7 +52,7 @@ function Title() {
             src={Edit}
             onClick={(e) => setIsEditing(true)}
             alt="editing-icon"
-            className="button-cross"
+            className="icon-editing"
           />
         </div>
       )}

@@ -1,0 +1,12 @@
+.popup-hide {
+    display: none;
+}
+
+.popup-nav { 
+   position: fixed;
+    width: 304px;
+    will-change: top,
+    left;
+    top: 196px;
+    left: 98px;
+}
