@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import "./App.css";
+import Login from "./components/Login/Login";
 import ToDoContainer from "./components/ToDo/ToDoContainer";
 import Home from "./components/Trello/Home";
 import Nav from "./components/Trello/nav/Nav";
@@ -22,16 +23,13 @@ function App() {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    // <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <>
       <Nav />
-      {/* Add ToDo */}
-      {/* <button onClick={addToDo}>Crear nuevo ToDo</button>
-      <div className="container">{toDos.map((uno) => uno)}</div> */}
-
-      {/* Add Title */}
       <Home />
-
-    </ThemeContext.Provider>
+      <Login />
+    </>
+    // </ThemeContext.Provider>
   );
 }
 
@@ -42,3 +40,7 @@ export default App;
 // El borrado funciona raro, a veces borra y otras no. Es por el index 0 y el modo de incrementar el id.
 // Que la palabra desaparezca despues del submit
 // Redondez del borde degradado en hover
+
+/* Add ToDo */
+/* <button onClick={addToDo}>Crear nuevo ToDo</button>
+      <div className="container">{toDos.map((uno) => uno)}</div> */
