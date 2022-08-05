@@ -1,9 +1,9 @@
 import React from 'react'
 
-function PopUpNav() {
+function PopUpNav({ showPopUp }) {
   return (
-    <div className='popup-nav'>PopUp-Nav</div>
-  )
+    <div className={showPopUp ? "popup-nav" : "popup-hide"}>PopUp-Nav</div>
+  );
 }
 
 export default PopUpNav;

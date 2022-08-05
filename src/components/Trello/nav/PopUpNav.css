@@ -5,8 +5,9 @@
 .popup-nav { 
    position: fixed;
     width: 304px;
-    will-change: top,
-    left;
-    top: 196px;
-    left: 98px;
+    will-change: top, left;
+    top: 10%;
+    left: 65%;
+    height: 400px;
+        background-color: #f3f3f3;
 }

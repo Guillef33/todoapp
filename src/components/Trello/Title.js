@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import iconCheck from "../../assets/icon-check.svg";
 import iconCross from "../../assets/icon-cross.svg";
 
-
 import Moon from "../../assets/icon-moon.svg";
 import Edit from "../../assets/free_icon_1.svg";
-
 
 import "../../dark.css";
 import "../../light.css";
 import "../../App.css";
+import './Nav.css'
 
 function Title() {
   const [query, setQuery] = useState();
@@ -32,31 +31,30 @@ function Title() {
   console.log(title);
 
   return (
-    <>
+    <div className="header-list">
       {isEditing ? (
         <>
           <form onSubmit={addTitle} className="title-editor">
             <input
               type="text"
-              id="edit-bar"
+              id="edit-task"
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Escriba el titulo"
+              placeholder="Introduzca el titulo de la lista..."
             />
-            <p className="error-form">{error}</p>
           </form>
         </>
       ) : (
         <div className="title-wrapper">
-          <h2>{title}</h2>
-          <img
-            src={Edit}
-            onClick={(e) => setIsEditing(true)}
-            alt="editing-icon"
-            className="icon-editing"
-          />
+          <h2 onClick={(e) => setIsEditing(true)}>{title}</h2>
         </div>
       )}
-    </>
+      <img
+        src={Edit}
+        onClick={(e) => setIsEditing(true)}
+        alt="editing-icon"
+        className="icon-editing"
+      />
+    </div>
   );
 }
 

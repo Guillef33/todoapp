@@ -8,19 +8,19 @@ function Nav() {
   const [showPopUp, setShowPopUp] = useState(false);
 
   return (
-    <div className="nav-container">
+    <nav className="nav-container">
       <div>Mi table</div>
-      <div>
-        <span>800 Golpes Enero</span>
-        <span>Mi perfil</span>
-        <span>Invitar gente</span>
-      </div>
-      <div>
-        <span onClick={(e) => setShowPopUp(true)}>Menu</span>
-        <PopUpNav className={showPopUp ? "popup-nav" : "popup-hide"} />
-        <span>Aplicaciones</span>
-      </div>
-    </div>
+      <ul className="nav-center">
+        <li>Equipo</li>
+        <li>Mi perfil</li>
+        <li>Invitar gente</li>
+      </ul>
+      <ul className="nav-right">
+        <li onClick={(e) => setShowPopUp(!showPopUp)}>Menu</li>
+        <PopUpNav showPopUp={showPopUp} />
+        <li>Aplicaciones</li>
+      </ul>
+    </nav>
   );
 }
 
