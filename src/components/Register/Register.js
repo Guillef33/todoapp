@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-import harcodeUsers from "../../hooks/harcodeUsers";
-import "../login/login.css";
-import noProfile from "../../assets/no-profile-img.jpg";
+import "../Login/Login.css";
 import Axios from "axios";
 
 import { Link } from "react-router-dom";
@@ -12,7 +10,7 @@ export default function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newUser, setNewUser] = useState({});
+  // const [newUser, setNewUser] = useState({});
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
@@ -63,7 +61,6 @@ export default function Form() {
     <>
       <div className="loginContainer">
         <form>
-          <img src={noProfile} alt="profile-pic" />
           <label>Username</label>
           <input
             type="text"
