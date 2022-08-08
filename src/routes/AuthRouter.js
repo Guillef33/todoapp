@@ -16,7 +16,7 @@ import Register from "../components/Register/Register";
 const AuthRouter = () => {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
+      <Route path="" element={<Login />} />
       <Route path="register" element={<Register />} />
 
       {/*Si no estoy logueado me mando a login siempre*/}
