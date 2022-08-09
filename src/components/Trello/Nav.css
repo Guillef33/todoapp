@@ -6,6 +6,11 @@ li {
     cursor: pointer;
 }
 
+.nav-right a {
+    color: white;
+    text-decoration: none;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-around;

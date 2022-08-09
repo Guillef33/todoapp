@@ -8,19 +8,18 @@ import {
   Link,
 } from "react-router-dom";
 
-import Header from "../components/Trello/nav/Nav";
+import Nav from "../components/Trello/nav/Nav";
 import Login from "../components/Login/Login";
 import Home from "../components/Trello/Home";
-import Main from "../pages/Main";
+import Landing from "../pages/Landing";
 
 const TrelloCloneApp = () => {
   return (
     <>
-      <Header />
-
       <Routes>
-        <Route path="/" element={<Main />}></Route>
+        <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/tablero" element={<Home />}></Route>
       </Routes>
     </>
   );
