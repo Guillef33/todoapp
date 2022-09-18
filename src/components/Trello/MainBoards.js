@@ -8,7 +8,7 @@ import "../../App.css";
 
 import Nav from "./nav/Nav";
 
-import HeaderBoards from "./nav/HeaderBoards";
+import HeaderBoards from "../../global/HeaderBoards";
 
 function MainBoards() {
   const [newList, setNewList] = useState([]);
@@ -21,7 +21,7 @@ function MainBoards() {
   return (
     <>
       {/* <Nav /> */}
-      <HeaderBoards />
+      <HeaderBoards color='black' />
       <div className="board-container">
         <div className="list-container">{newList.map((uno) => uno)}</div>
         <button onClick={showNewList} className="button-add">
