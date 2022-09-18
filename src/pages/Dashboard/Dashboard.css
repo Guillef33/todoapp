@@ -3,4 +3,5 @@
     grid-template-columns: 1fr 2fr;
     max-width: 1140px;
     margin: auto;
+    padding: 100px 0px;
 }

@@ -9,16 +9,17 @@ function Title() {
   const [query, setQuery] = useState();
   const [isEditing, setIsEditing] = useState(true);
   const [iconShow, setIconShow] = useState(false);
+  const [error, setError] = useState("");
 
   const [task, setTask] = useState("");
 
   const addTitle = (text) => {
     text.preventDefault();
     if (query === "" || query === undefined || query === null) {
-      //   setError("Debes ingresar un texto");
+      setError("Debes ingresar un titulo");
     } else {
       setTask(query);
-      //   setError("");
+      setError("");
       setIsEditing(false);
     }
   };
@@ -34,6 +35,7 @@ function Title() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Introduzca el titulo para esta tarjeta..."
             />
+            <p>{error}</p>
           </form>
         </>
       ) : (
@@ -43,6 +45,7 @@ function Title() {
           onMouseLeave={() => setIconShow(false)}
         >
           <h2 onClick={(e) => setIsEditing(true)}>{task}</h2>
+          <p>{error}</p>
 
           {iconShow ? (
             <img
