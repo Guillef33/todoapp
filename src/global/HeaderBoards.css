@@ -13,3 +13,13 @@
 .logo-trello {
     cursor: pointer;
 }
+
+.search-nav-profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-nav-profile-section  img {
+    height: 50px;
+}
