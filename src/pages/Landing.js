@@ -19,9 +19,10 @@ function Landing() {
           </p>
         </div>
         <div>
-          <img src={Hero} alt="hero-main" className="hero-main-image"/>
+          <img src={Hero} alt="hero-main" className="hero-main-image" />
         </div>
       </div>
+      <RegisterInput />
     </>
   );
 }
