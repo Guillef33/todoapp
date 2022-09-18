@@ -1,0 +1,21 @@
+.main-section-container {
+    background: rgba(0, 0, 0, 0) linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat scroll 0% 0%;
+
+}
+
+.home-section-container {
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    place-items: center;
+    margin: auto;
+    padding: 40px 0px;
+}
+
+.home-section-title h1 {
+    font-size: 44px;
+}
+
+.home-section-title p {
+    font-size: 20px;
+}

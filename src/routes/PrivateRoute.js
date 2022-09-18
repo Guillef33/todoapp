@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 import Home from "../components/Trello/Home";
-import Landing from "../pages/Landing";
+import Landing from "../pages/Home";
 
 const PrivateRoute = (props) => {
   const { login } = useContext(UserContext);

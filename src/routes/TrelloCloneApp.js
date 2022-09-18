@@ -11,7 +11,7 @@ import {
 import Nav from "../components/Trello/nav/Nav";
 import Login from "../components/Login/Login";
 import Home from "../components/Trello/Home";
-import Landing from "../pages/Landing";
+import Landing from "../pages/Home";
 import ToDoContainer from "../components/ToDo/ToDoContainer";
 
 const TrelloCloneApp = () => {

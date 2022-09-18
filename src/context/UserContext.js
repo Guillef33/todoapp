@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
-import Landing from "../pages/Landing";
+import Landing from "../pages/Home";
 export const UserContext = createContext(null);
 
 const UserProvider = (props) => {
