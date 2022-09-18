@@ -1,6 +1,6 @@
 import React from "react";
 import AuthRouter from "./AuthRouter";
-import Home from "../components/Trello/Home";
+import Home from "../components/Trello/MainBoards";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TrelloCloneApp from "./TrelloCloneApp";

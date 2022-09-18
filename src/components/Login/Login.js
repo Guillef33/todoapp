@@ -15,7 +15,7 @@ function Login() {
   const crearUser = (e) => {
     e.preventDefault();
     setLogin(true);
-    navigate("/tablero");
+    navigate("/dashboard");
 
     // console.log(username);
     // Axios.post("http://localhost:5000/users/add")

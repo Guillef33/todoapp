@@ -6,9 +6,11 @@ import "../../light.css";
 import Boards from "./Boards";
 import "../../App.css";
 
-import Nav from './nav/Nav';
+import Nav from "./nav/Nav";
 
-function Home() {
+import HeaderBoards from "./nav/HeaderBoards";
+
+function MainBoards() {
   const [newList, setNewList] = useState([]);
 
   const showNewList = () => {
@@ -18,7 +20,8 @@ function Home() {
 
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
+      <HeaderBoards />
       <div className="board-container">
         <div className="list-container">{newList.map((uno) => uno)}</div>
         <button onClick={showNewList} className="button-add">
@@ -29,4 +32,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default MainBoards;

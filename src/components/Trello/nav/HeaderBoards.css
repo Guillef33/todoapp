@@ -1,0 +1,14 @@
+.boards-header-container {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    color: white;
+    height: 60px;
+    margin-left: auto;
+}
+
+.logo-trello {
+    cursor: pointer;
+}
