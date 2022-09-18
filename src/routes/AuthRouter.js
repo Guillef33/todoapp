@@ -19,7 +19,7 @@ const AuthRouter = () => {
     <Routes>
       <Route path="" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route path="todo" element={<ToDoContainer />} />
+      {/* <Route path="todo" element={<ToDoContainer />} /> */}
 
       {/*Si no estoy logueado me mando a login siempre*/}
       <Route path="*" element={<Login to="login" />} />

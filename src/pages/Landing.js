@@ -2,7 +2,9 @@ import React from "react";
 
 import Header from "../global/Header";
 
-import Hero from '../assets/hero.webp'
+import Hero from '../assets/hero.webp';
+
+import RegisterInput from "./RegisterInput";
 
 
 function Landing() {

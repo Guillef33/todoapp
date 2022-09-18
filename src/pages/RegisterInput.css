@@ -1,0 +1,41 @@
+.input-register-wrapper {
+    display: flex;
+    padding: 40px 0px;
+}
+
+.input-register-wrapper input {
+    font-size: 1rem;
+    padding: 0.7rem 0.75rem 0.8rem;
+    border: 1px solid rgb(223, 225, 230);
+    border-radius: 0.3rem;
+    display: block;
+    margin-right: 1rem;
+    max-width: 376px;
+    transition: all 250ms ease-out 0s;
+    width: 376px;
+}
+
+.input-register-wrapper button {
+    appearance: none;
+    -moz-box-align: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: inline-flex;
+    transition: all 250ms ease-out 0s;
+    background-color: rgb(0, 101, 255);
+    border: 1px solid rgb(0, 101, 255);
+    color: rgb(255, 255, 255) !important;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.7rem 1rem 0.8rem;
+}
+
+.watch-video-link {
+    display: flex;
+}
+
+.watch-video-link button {
+    color: rgb(0, 82, 204);
+    text-decoration: underline;
+}
