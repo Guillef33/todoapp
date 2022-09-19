@@ -1,12 +1,10 @@
 // import { List } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import "../../dark.css";
 import "../../light.css";
 import Boards from "./Boards";
 import "../../App.css";
-
-import Nav from "./nav/Nav";
 
 import HeaderBoards from "../../global/HeaderBoards";
 

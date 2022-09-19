@@ -1,11 +1,9 @@
 import React from "react";
 import AuthRouter from "./AuthRouter";
-import Home from "../components/Trello/MainBoards";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TrelloCloneApp from "./TrelloCloneApp";
 import PrivateRoute from "./PrivateRoute";
-import Nav from "../components/Trello/nav/Nav";
 
 // Rutas Padres y Rutas Hijas
 

@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 // Protege las rutas a traves de un condicional
 import { UserContext } from "../context/UserContext";
 
-import Home from "../components/Trello/MainBoards";
 import Landing from "../pages/Home";
 
 const PrivateRoute = (props) => {

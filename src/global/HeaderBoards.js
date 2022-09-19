@@ -10,16 +10,21 @@ import SearchHeader from "./SearchHeader";
 
 import "./HeaderBoards.css";
 
-function HeaderBoards({ color }) {
-  console.log(color);
+import PopUpNav from "../pages/Trello/nav/PopUp-Nav";
 
-  const [newBoard, setNewBoard] = useState(false)
+function HeaderBoards({ color }) {
+  const [newBoard, setNewBoard] = useState(false);
+
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  console.log(showPopUp);
 
   let navigate = useNavigate();
 
   const createBoard = () => {
-    setNewBoard(true)
-  }
+    setNewBoard(true);
+    // setShowPopUp(true);
+  };
 
   return (
     <nav className="boards-header-container" style={{ backgroundColor: color }}>
@@ -34,10 +39,11 @@ function HeaderBoards({ color }) {
         <Link to="/solutions">Reciente</Link>
         <Link to="/plans">Marcado</Link>
         <Link to="/pricing">Plantillas</Link>
-        <button onClick={createBoard}>Crear</button>
+        <button onClick={(e) => setShowPopUp(!showPopUp)}>Crear</button>
+        <PopUpNav showPopUp={showPopUp} />
         <Link to="/resources">Resources</Link>
       </ul>
-      <ul className="main-header-right">
+      <ul className="search-right-section">
         <SearchHeader />
       </ul>
     </nav>

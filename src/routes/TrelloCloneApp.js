@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import Login from "../components/Login/Login";
-import MainBoards from "../components/Trello/MainBoards";
+import MainBoards from "../pages/Trello/MainBoards";
 import Landing from "../pages/Home";
 import Dashboard from "../pages/Dashboard/Dashboard";
 

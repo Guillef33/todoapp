@@ -1,7 +1,7 @@
 .boards-header-container {
     /* background-color: black; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     align-items: center;
     color: white;
@@ -18,8 +18,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 40px;
 }
 
 .search-nav-profile-section  img {
     height: 50px;
+}
+
+.search-right-section {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+
+.search-input-nav {
+    height: 32px;
+    width: 100%;
+    padding: 0px 12px 0px 30px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
+}
+
+.search-profile-wrapper {
+    display: flex;
+    align-items: center;
 }
