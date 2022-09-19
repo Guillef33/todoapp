@@ -1,109 +1,66 @@
 import { useState } from "react";
 
 import "../Login/Login.css";
-import Axios from "axios";
 
-import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+
+import { useNavigate } from "react-router-dom";
 
 export default function Form() {
-  // States for registration
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // const [newUser, setNewUser] = useState({});
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
-  Axios.defaults.withCredentials = true;
+  const { signUp } = useAuth();
 
-  const register = () => {
-    Axios.post("http://localhost:5000/register", {
-      username: name,
-      password: password,
-      email: email,
-    }).then((response) => {
-      console.log(response);
-    });
-    setSubmitted(true);
+  const [error, setError] = useState("");
+
+  const handleChange = ({ target: { name, value } }) => {
+    // console.log(name, value);
+    setUser({ ...user, [name]: value });
   };
 
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? "" : "none",
-        }}
-      >
-        <p>El {name} fue registrado exitosamente.</p>
-      </div>
-    );
-  };
+  console.log(error);
 
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? "" : "none",
-        }}
-      >
-        <p>Por favor, complete todos los campos.</p>
-      </div>
-    );
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signUp(user.email, user.password);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.code);
+      if (error.code === "auth/internal-error") {
+        setError("Correo Invalido");
+      } else {
+        setError(error.message);
+      }
+    }
   };
 
   return (
     <>
       <div className="loginContainer">
-        <form>
-          <label>Username</label>
-          <input
-            type="text"
-            placeholder="Ingrese su nombre"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
-          <label>Password</label>
+        {error && <p>{error}</p>}
 
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email "
+            placeholder="Ingrese su email"
+            onChange={handleChange}
+            name="email"
+          />
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             placeholder="Ingrese su password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
+            onChange={handleChange}
+            name="password"
           />
-
-          <label>Email</label>
-
-          <input
-            type="email"
-            placeholder="Ingrese su email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-
-          <button onClick={register} type="button">
-            Enviar
-          </button>
-
-          {submitted ? (
-            <>
-              <Link to={"/auth/login"} className="button-main">
-                Login
-              </Link>
-            </>
-          ) : (
-            ""
-          )}
-
-          <div className="feedback-registro">
-            {errorMessage()}
-            {successMessage()}
-          </div>
+          <button>Enviar</button>
         </form>
       </div>
     </>

@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 
 // Protege las rutas a traves de un condicional
-import { UserContext } from "../context/UserContext";
+import { AuthContext } from "../context/AuthContext";
 
 import Landing from "../pages/Home";
 
+import { useAuth } from "../context/AuthContext";
+
 const PrivateRoute = (props) => {
-  const { login } = useContext(UserContext);
+  const { login } = useAuth();
   // Podemos agregar un componente para el false, toast o alert
-  // En el true pasamos todas las rutas
+
   return login ? props.children : <Landing />;
 };
 

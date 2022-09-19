@@ -1,53 +1,69 @@
-import React, { useState, useContext } from "react";
-import "./Login.css";
-import Axios from "axios";
-import { UserContext } from "../../context/UserContext";
+import { useState } from "react";
+
+import "../Login/Login.css";
+
+import { useAuth } from "../../context/AuthContext";
+
 import { useNavigate } from "react-router-dom";
 
-function Login() {
-  const { login, setLogin } = useContext(UserContext);
-  const [username, setUserame] = useState("");
+export default function Login() {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-  Axios.defaults.withCredentials = true;
+  const navigate = useNavigate();
 
-  let navigate = useNavigate();
+  const { login } = useAuth();
 
-  const crearUser = (e) => {
-    e.preventDefault();
-    setLogin(true);
-    navigate("/dashboard");
+  const [error, setError] = useState("");
 
-    // console.log(username);
-    // Axios.post("http://localhost:5000/users/add")
-    //   .then((response) => {
-    //     console.log(response);
-    //     console.log("Everything is awesome.");
-    //     setUserame(username);
-    //   })
-    //   .catch((error) => {
-    //     console.log(username);
-    //     console.warn("Not good man :(", error);
-    //   });
+  const handleChange = ({ target: { name, value } }) => {
+    // console.log(name, value);
+    setUser({ ...user, [name]: value });
   };
 
-  console.log(username);
+  console.log(error);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('')
+    try {
+      await login(user.email, user.password);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.code);
+      if (error.code === "auth/internal-error") {
+        setError("Correo Invalido");
+      } else {
+        setError(error.message);
+      }
+    }
+  };
 
   return (
-    <div className="loginContainer">
-      <form>
-        <label>Username</label>
-        <input
-          type="text"
-          placeholder="Ingrese su nombre"
-          onChange={(e) => setUserame(e.target.value)}
-          value={username}
-        />
-        <button onClick={crearUser} type="submit">
-          Enviar
-        </button>
-      </form>
-    </div>
+    <>
+      <div className="loginContainer">
+        {error && <p>{error}</p>}
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email "
+            placeholder="Ingrese su email"
+            onChange={handleChange}
+            name="email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            placeholder="Ingrese su password"
+            onChange={handleChange}
+            name="password"
+          />
+          <button>Enviar</button>
+        </form>
+      </div>
+    </>
   );
 }
-
-export default Login;

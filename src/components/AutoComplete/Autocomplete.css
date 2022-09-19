@@ -1,0 +1,27 @@
+.autocomplete-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container img {
+    height: 30px;
+    position: absolute;
+    left: 170px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.image-icon {
+    cursor: pointer;
+}

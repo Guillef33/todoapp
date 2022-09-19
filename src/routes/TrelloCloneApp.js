@@ -12,6 +12,7 @@ import Login from "../components/Login/Login";
 import MainBoards from "../pages/Trello/MainBoards";
 import Landing from "../pages/Home";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import AutoComplete from "../components/AutoComplete/AutoComplete";
 
 const TrelloCloneApp = () => {
   return (
@@ -22,6 +23,7 @@ const TrelloCloneApp = () => {
         <Route path="/tablero" element={<MainBoards />}></Route>
 
         <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/autocomplete" element={<AutoComplete />} />
       </Routes>
     </>
   );
